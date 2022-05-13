@@ -1,5 +1,8 @@
 # go-optional
 
+[![CI](https://github.com/spenserblack/go-optional/actions/workflows/ci.yml/badge.svg)](https://github.com/spenserblack/go-optional/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/spenserblack/go-optional/branch/main/graph/badge.svg?token=ce0g4TeUBX)](https://codecov.io/gh/spenserblack/go-optional)
+
 An `Optional` type for Go.
 
 ## Description
