@@ -9,36 +9,3 @@ type Optional[T any] interface {
 	// UnwrapSafe acts like Unwrap, but will return an error instead of panicking.
 	UnwrapSafe() (T, error)
 }
-
-type none[T any] struct{}
-
-// None is the none type, signifying that the T doesn't exist.
-func None[T any]() Optional[T] {
-	return none[T]{}
-}
-
-func (none[T]) Unwrap() T {
-	panic("Unwrap on None")
-}
-
-func (none[T]) UnwrapSafe() (T, error) {
-	var zero T
-	return zero, ErrNoneUnwrap
-}
-
-type some[T any] struct {
-	value T
-}
-
-// Some is the type for an optional with an existing value.
-func Some[T any](value T) Optional[T] {
-	return some[T]{value}
-}
-
-func (o some[T]) Unwrap() T {
-	return o.value
-}
-
-func (o some[T]) UnwrapSafe() (T, error) {
-	return o.value, nil
-}
