@@ -27,7 +27,8 @@ survey answered `0`, or if they simply declined to answer?
 
 One way is to make `Pets` type `*int`, so that it can be `nil`. But this opens
 us up to nil-pointer errors. That isn't so bad in this example, but it can get
-tricky with `nil` interfaces.
+tricky if the user of your library is expected to dereference the pointer, or
+if you can return a nil interface.
 
 Instead of having values that may be nil, you can have an optional containing
 that value. This makes it necessary for anyone using your library to
