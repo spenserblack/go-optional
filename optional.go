@@ -8,4 +8,8 @@ type Optional[T any] interface {
 	Unwrap() T
 	// UnwrapSafe acts like Unwrap, but will return an error instead of panicking.
 	UnwrapSafe() (T, error)
+	// IsSome will get if the Optional is Some and can be safely unwrapped.
+	IsSome() bool
+	// IsNone will get if the Optional is None and will fail on an unwrap.
+	IsNone() bool
 }

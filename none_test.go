@@ -21,3 +21,19 @@ func TestNoneUnwrapSafeErr(t *testing.T) {
 		t.Fatalf(`err = %v, want ErrNoneUnwrap`, err)
 	}
 }
+
+func TestNoneIsNotSome(t *testing.T) {
+	none := None[struct{}]()
+
+	if none.IsSome() {
+		t.Fatalf("None.IsSome() = true, want false")
+	}
+}
+
+func TestNoneIsNone(t *testing.T) {
+	none := None[struct{}]()
+
+	if !none.IsNone() {
+		t.Fatalf("None.IsNone() = false, want true")
+	}
+}

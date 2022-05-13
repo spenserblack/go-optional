@@ -38,3 +38,19 @@ func TestSomeUnwrapSafeOk(t *testing.T) {
 		}
 	}
 }
+
+func TestSomeIsSome(t *testing.T) {
+	some := Some(struct{}{})
+
+	if !some.IsSome() {
+		t.Fatalf("Some.IsSome() = false, want true")
+	}
+}
+
+func TestSomeIsNotNone(t *testing.T) {
+	some := Some(struct{}{})
+
+	if some.IsNone() {
+		t.Fatalf("Some.IsNone() = true, want false")
+	}
+}

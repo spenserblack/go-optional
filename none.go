@@ -15,3 +15,11 @@ func (none[T]) UnwrapSafe() (T, error) {
 	var zero T
 	return zero, ErrNoneUnwrap
 }
+
+func (none[T]) IsSome() bool {
+	return false
+}
+
+func (none[T]) IsNone() bool {
+	return true
+}

@@ -16,3 +16,11 @@ func (o some[T]) Unwrap() T {
 func (o some[T]) UnwrapSafe() (T, error) {
 	return o.value, nil
 }
+
+func (some[T]) IsSome() bool {
+	return true
+}
+
+func (some[T]) IsNone() bool {
+	return false
+}
