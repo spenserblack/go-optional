@@ -13,7 +13,9 @@ type Optional[T any] interface {
 type none[T any] struct{}
 
 // None is the none type, signifying that the T doesn't exist.
-var None Optional[interface{}] = none[interface{}]{}
+func None[T any]() Optional[T] {
+	return none[T]{}
+}
 
 func (none[T]) Unwrap() T {
 	panic("Unwrap on None")
