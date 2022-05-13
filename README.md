@@ -22,7 +22,7 @@ type SurveyAnswers struct {
 }
 ```
 
-The zero value of `int` is zero. So how can we tell if the person who took the
+The zero value of `int` is `0`. So how can we tell if the person who took the
 survey answered `0`, or if they simply declined to answer?
 
 One way is to make `Pets` type `*int`, so that it can be `nil`. But this opens
